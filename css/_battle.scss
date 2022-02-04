@@ -1,0 +1,40 @@
+.pawn-black {
+    position: relative;
+    animation: pawn-black-2 3s forwards;
+}
+
+
+.pawn-white {
+    position: relative;
+    animation: pawn-white-1 3s forwards;
+    animation-delay: 4s;
+}
+
+.horse-black {
+    position: relative;
+    animation-name: horse-black, horse-black-2;
+    animation-duration: 3s, 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 7s, 10s;
+}
+
+
+@keyframes pawn-black-2 {
+    0% {top: 0px;}
+    100% {top: 10vw;}
+}
+
+@keyframes pawn-white-1 {
+    0% {bottom: 0px;}
+    100% {bottom: 5vw;}
+}
+
+@keyframes horse-black {
+    0% {left: 0px;}
+    100% {left: 5vw;}
+}
+
+@keyframes horse-black-2 {
+    0% {top: 0px;}
+    100% {top: 10vw;}
+}
