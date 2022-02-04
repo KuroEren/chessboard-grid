@@ -1,4 +1,4 @@
 # Chessboard w/Grid
 
 
-<a href="#">Live Here</a>
+<a href="https://kuroeren.github.io/chessboard-grid/">Live Here</a>
