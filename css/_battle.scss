@@ -1,40 +1,106 @@
-.pawn-black {
+%position {
     position: relative;
-    animation: pawn-black-2 3s forwards;
 }
 
+.first-move {
+    @extend %position;
+    animation: pawn-white-2 3s forwards;
+}
 
-.pawn-white {
-    position: relative;
-    animation: pawn-white-1 3s forwards;
+.second-move {
+    @extend %position;
+    animation-name: pawn-black-2;
     animation-delay: 4s;
-}
-
-.horse-black {
-    position: relative;
-    animation-name: horse-black, horse-black-2;
-    animation-duration: 3s, 3s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
-    animation-delay: 7s, 10s;
 }
 
+.third-move {
+    @extend %position;
+    animation-name: bishop-white;
+    animation-delay: 8s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.fourth-move {
+    @extend %position;
+    animation-name: horse-black-left, horse-black-left-2;
+    animation-delay: 12s, 13s;
+    animation-duration: 1s, 3s;
+    animation-fill-mode: forwards;
+}
+
+.fifth-move {
+    @extend %position;
+    animation-name: queen-white, queen-white-take;
+    animation-delay: 17s, 27s;
+    animation-duration: 4s, 3s;
+    animation-fill-mode: forwards;
+}
+
+.sixth-move {
+    @extend %position;
+    animation-name: horse-black-right, horse-black-right-2;
+    animation-delay: 22s, 23s;
+    animation-duration: 1s, 3s;
+    animation-fill-mode: forwards;
+}
+
+.first-take {
+    @extend %position;
+    animation-name: first-take;
+    animation-delay: 30s;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pawn-white-2 {
+    0% {bottom: 0px;}
+    100% {bottom: 10vw;}
+}
 
 @keyframes pawn-black-2 {
     0% {top: 0px;}
     100% {top: 10vw;}
 }
 
-@keyframes pawn-white-1 {
-    0% {bottom: 0px;}
-    100% {bottom: 5vw;}
+@keyframes bishop-white {
+    0% {transform: translateX(0) translateY(0);}
+    100% {transform: translateX(-15vw) translateY(-15vw);}
 }
 
-@keyframes horse-black {
-    0% {left: 0px;}
+@keyframes horse-black-left {
+    0% {left: 0;}
     100% {left: 5vw;}
 }
 
-@keyframes horse-black-2 {
-    0% {top: 0px;}
+@keyframes horse-black-left-2 {
+    0% {top: 0;}
     100% {top: 10vw;}
+}
+
+@keyframes queen-white {
+    0% {transform: translateX(0) translateY(0);}
+    100% {transform: translateX(20vw) translateY(-20vw);}
+}
+
+@keyframes horse-black-right {
+    0% {right: 0;}
+    100% {right: 5vw;}
+}
+
+@keyframes horse-black-right-2 {
+    0% {top: 0;}
+    100% {top: 10vw;}
+}
+
+@keyframes queen-white-take {
+    0% {transform: translateX(20vw) translateY(-20vw);}
+    100% {transform: translateX(10vw) translateY(-30vw);}
+}
+
+@keyframes first-take {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }

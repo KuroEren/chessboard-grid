@@ -34,30 +34,97 @@
   font-size: clamp(3vw, 5vw, 5px);
 }
 
-.pawn-black {
+.first-move, .second-move, .third-move, .fourth-move, .fifth-move, .sixth-move, .first-take {
   position: relative;
-  -webkit-animation: pawn-black-2 3s forwards;
-          animation: pawn-black-2 3s forwards;
 }
 
-.pawn-white {
-  position: relative;
-  -webkit-animation: pawn-white-1 3s forwards;
-          animation: pawn-white-1 3s forwards;
+.first-move {
+  -webkit-animation: pawn-white-2 3s forwards;
+          animation: pawn-white-2 3s forwards;
+}
+
+.second-move {
+  -webkit-animation-name: pawn-black-2;
+          animation-name: pawn-black-2;
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
-}
-
-.horse-black {
-  position: relative;
-  -webkit-animation-name: horse-black, horse-black-2;
-          animation-name: horse-black, horse-black-2;
-  -webkit-animation-duration: 3s, 3s;
-          animation-duration: 3s, 3s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-delay: 7s, 10s;
-          animation-delay: 7s, 10s;
+}
+
+.third-move {
+  -webkit-animation-name: bishop-white;
+          animation-name: bishop-white;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.fourth-move {
+  -webkit-animation-name: horse-black-left, horse-black-left-2;
+          animation-name: horse-black-left, horse-black-left-2;
+  -webkit-animation-delay: 12s, 13s;
+          animation-delay: 12s, 13s;
+  -webkit-animation-duration: 1s, 3s;
+          animation-duration: 1s, 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.fifth-move {
+  -webkit-animation-name: queen-white, queen-white-take;
+          animation-name: queen-white, queen-white-take;
+  -webkit-animation-delay: 17s, 27s;
+          animation-delay: 17s, 27s;
+  -webkit-animation-duration: 4s, 3s;
+          animation-duration: 4s, 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.sixth-move {
+  -webkit-animation-name: horse-black-right, horse-black-right-2;
+          animation-name: horse-black-right, horse-black-right-2;
+  -webkit-animation-delay: 22s, 23s;
+          animation-delay: 22s, 23s;
+  -webkit-animation-duration: 1s, 3s;
+          animation-duration: 1s, 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.first-take {
+  -webkit-animation-name: first-take;
+          animation-name: first-take;
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s;
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes pawn-white-2 {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 10vw;
+  }
+}
+
+@keyframes pawn-white-2 {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 10vw;
+  }
 }
 
 @-webkit-keyframes pawn-black-2 {
@@ -78,57 +145,159 @@
   }
 }
 
-@-webkit-keyframes pawn-white-1 {
+@-webkit-keyframes bishop-white {
   0% {
-    bottom: 0px;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
   }
   100% {
-    bottom: 5vw;
+    -webkit-transform: translateX(-15vw) translateY(-15vw);
+            transform: translateX(-15vw) translateY(-15vw);
   }
 }
 
-@keyframes pawn-white-1 {
+@keyframes bishop-white {
   0% {
-    bottom: 0px;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
   }
   100% {
-    bottom: 5vw;
+    -webkit-transform: translateX(-15vw) translateY(-15vw);
+            transform: translateX(-15vw) translateY(-15vw);
   }
 }
 
-@-webkit-keyframes horse-black {
+@-webkit-keyframes horse-black-left {
   0% {
-    left: 0px;
+    left: 0;
   }
   100% {
     left: 5vw;
   }
 }
 
-@keyframes horse-black {
+@keyframes horse-black-left {
   0% {
-    left: 0px;
+    left: 0;
   }
   100% {
     left: 5vw;
   }
 }
 
-@-webkit-keyframes horse-black-2 {
+@-webkit-keyframes horse-black-left-2 {
   0% {
-    top: 0px;
+    top: 0;
   }
   100% {
     top: 10vw;
   }
 }
 
-@keyframes horse-black-2 {
+@keyframes horse-black-left-2 {
   0% {
-    top: 0px;
+    top: 0;
   }
   100% {
     top: 10vw;
+  }
+}
+
+@-webkit-keyframes queen-white {
+  0% {
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-transform: translateX(20vw) translateY(-20vw);
+            transform: translateX(20vw) translateY(-20vw);
+  }
+}
+
+@keyframes queen-white {
+  0% {
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-transform: translateX(20vw) translateY(-20vw);
+            transform: translateX(20vw) translateY(-20vw);
+  }
+}
+
+@-webkit-keyframes horse-black-right {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 5vw;
+  }
+}
+
+@keyframes horse-black-right {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 5vw;
+  }
+}
+
+@-webkit-keyframes horse-black-right-2 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 10vw;
+  }
+}
+
+@keyframes horse-black-right-2 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 10vw;
+  }
+}
+
+@-webkit-keyframes queen-white-take {
+  0% {
+    -webkit-transform: translateX(20vw) translateY(-20vw);
+            transform: translateX(20vw) translateY(-20vw);
+  }
+  100% {
+    -webkit-transform: translateX(10vw) translateY(-30vw);
+            transform: translateX(10vw) translateY(-30vw);
+  }
+}
+
+@keyframes queen-white-take {
+  0% {
+    -webkit-transform: translateX(20vw) translateY(-20vw);
+            transform: translateX(20vw) translateY(-20vw);
+  }
+  100% {
+    -webkit-transform: translateX(10vw) translateY(-30vw);
+            transform: translateX(10vw) translateY(-30vw);
+  }
+}
+
+@-webkit-keyframes first-take {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes first-take {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
