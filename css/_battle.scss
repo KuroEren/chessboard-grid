@@ -5,6 +5,7 @@
 .first-move {
     @extend %position;
     animation: pawn-white-2 3s forwards;
+    animation-delay: 2s;
 }
 
 .second-move {

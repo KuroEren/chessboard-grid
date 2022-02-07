@@ -41,6 +41,8 @@
 .first-move {
   -webkit-animation: pawn-white-2 3s forwards;
           animation: pawn-white-2 3s forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 
 .second-move {
